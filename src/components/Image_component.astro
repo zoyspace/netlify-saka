@@ -1,0 +1,99 @@
+---
+import { Image } from '@astrojs/image/components';
+
+export interface Props {
+	name: string;
+	page_title: string;
+	page_url: string;
+  page_updated:string;
+	stored_imageName: string;
+}
+
+const { name, page_title, page_url, page_updated,stored_imageName} = Astro.props;
+const group_name ="乃木坂４６";
+const dir_image= "../assets/";
+const extention = ".webp"
+const image_pullpass = dir_image + stored_imageName + extention;
+// const testpass = "../assets/202306272110_北川悠理_00.webp"
+---
+<dev>
+    <a class="imageover" target="_blank" rel="noopener" href={page_url}>
+      <dev class="image-info">
+        <h3 class="name">{name}</h3>
+        <h3 class="date">{page_updated}</h3>
+      </dev>
+      <Image
+        src={image_pullpass}
+        format={'webp'} 
+        alt={group_name} 
+        width={1500} height={1500}
+        
+      />
+ 
+    </a>
+    
+</dev>
+
+<style>
+   
+    .blog_images {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    .imageover {
+      position: relative;
+      width: calc(49.9%);
+  
+      gap: 2px;
+      padding: 1px;
+      /* background-color: palevioletred; */
+    }
+    img {
+      width: calc(99%);
+      height: calc(100%);
+      object-fit: cover;
+      border-radius: 30px;
+      margin: 5px;
+      transition: transform 1s, border-radius 1s;
+    }
+    img:hover {
+      transform: translate(0.3rem, -0.3rem);
+      border-radius: 100px;
+    }
+  
+    .image-info {
+      position: absolute;
+  
+      bottom: 25px;
+      left: 25px;
+    }
+    .image-info .name {
+      color: hotpink;
+      font-size: 1rem;
+  
+    }
+    .ad1{
+        width: 350px; 
+        height: 240px;
+      }
+    
+    @media (max-width: 600px) {
+      .imageover {
+        width: calc(100%);
+      }
+      img {
+        border-radius: 10px;
+      }
+      img:hover {
+        transform: translate(0.2rem, -0.2rem);
+        border-radius: 30px;
+      }
+      .image-info .name {
+        font-size: 1rem;
+      }
+  
+    }
+  
+ </style>
+  
+  
