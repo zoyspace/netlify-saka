@@ -9,7 +9,7 @@ import { exit } from "process";
 const target_url = "https://www.nogizaka46.com/s/n46/diary/MEMBER";
 const out_image_file = "out_imageList.json";
 const src_dir = "./src/";
-const image_dir = "./assets/";
+const image_dir = "./src/assets/";
 export interface blog_element {
 	date: string;
 	name: string;
