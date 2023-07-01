@@ -37,7 +37,7 @@ export async function imageDownConvert(
 	try {
 		let numDown = 0;
 		const uniqueShortenedNames = getUniqueShortenedNamesFileNames(image_dir);
-		for (const imageElemnt of imageElemnts) {
+		for (const [index, imageElemnt] of imageElemnts.entries()) {
 			const Mdate = imageElemnt.date.replace(/[:/ ]+/g, "");
 			if (uniqueShortenedNames?.includes(Mdate)) continue;
 			const outName1 = Mdate + "_" + imageElemnt.name;
