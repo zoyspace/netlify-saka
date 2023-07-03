@@ -1,7 +1,7 @@
 {
   "name": "certain-comet",
-  "type": "module",
-  "target": "ES2022",
+  "type": "commonjs",
+  "target": "ES2020",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
@@ -11,7 +11,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/image": "^0.17.1",
+    "@astrojs/netlify": "^2.3.0",
     "@netlify/functions": "^1.6.0",
     "@playwright/test": "^1.35.1",
     "astro": "^2.7.2",

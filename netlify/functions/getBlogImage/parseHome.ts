@@ -21,6 +21,6 @@ export function parseHome(html: string) {
 				imgUrls: [],
 			});
 	});
-	console.log(__filename);
+	// console.log(__filename);
 	return blogArray;
 }

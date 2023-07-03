@@ -1,4 +1,5 @@
 [functions]
+  node_bundler = "esbuild"
   # Includes "package.json" in the function bundle.
   included_files = ["package.json"]
   external_node_modules = ["@playwright/test", "playwright-core"]

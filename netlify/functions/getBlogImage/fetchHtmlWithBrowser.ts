@@ -12,6 +12,6 @@ export async function fetchHtmlWithBrowser(target_url: string) {
 	const html = await page.content();
 
 	await browser.close();
-	console.log("__filename");
+	// console.log("__filename");
 	return html;
 }

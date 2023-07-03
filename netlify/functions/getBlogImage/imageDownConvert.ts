@@ -54,7 +54,7 @@ export async function imageDownConvert(
 			}
 		}
 		console.log("取得した画像数： " + numDown.toString());
-		console.log(__filename);
+		// console.log(__filename);
 	} catch (err: any) {
 		console.error(`Error: ${err.message}`);
 	}
