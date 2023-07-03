@@ -7,5 +7,5 @@ export default defineConfig({
 		assets: true,
 	},
 	output: "server",
-	adapter: netlify(),
+	// adapter: netlify(),
 });
