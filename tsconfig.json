@@ -6,7 +6,7 @@
     "target": "ES2020",
     // Replace `astro/client` with `@astrojs/image/client`
     "types": [
-      "@astrojs/image/client"
+      "astro/client-image"
     ]
   }
 }
