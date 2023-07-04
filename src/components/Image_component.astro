@@ -13,7 +13,7 @@ export interface Props {
 
 const { name, page_title, page_url, page_updated,stored_imageName} = Astro.props;
 const group_name ="乃木坂４６";
-const dir_image= "public/";
+const dir_image= "./";
 // const dir_image= "src/assets/images/";
 const extention = ".webp"
 const image_pullpass = dir_image + stored_imageName + extention;
@@ -22,6 +22,11 @@ import myImage from "../assets/images/202306202108_北川悠理_00.webp"; // Ima
 
 // import image_connect_pass from image_pullpass;
 // const testpass = "../assets/202306272110_北川悠理_00.webp"
+
+// https://main--taupe-bublanina-41fa89.netlify.app/public/202307031925_池田瑛紗_03.webp
+// https://main--taupe-bublanina-41fa89.netlify.app/202307031925_池田瑛紗_03.webp
+// https://main--taupe-bublanina-41fa89.netlify.app/favicon.svg
+
 ---
 <dev>
     <a class="imageover" target="_blank" rel="noopener" href={page_url}>
