@@ -16,6 +16,8 @@ const group_name ="乃木坂４６";
 const dir_image= "src/assets/images/";
 const extention = ".webp"
 const image_pullpass = dir_image + stored_imageName + extention;
+import myImage from "../assets/images/202306202108_北川悠理_00.webp"; // Image is 1600x900
+
 // import image_connect_pass from image_pullpass;
 // const testpass = "../assets/202306272110_北川悠理_00.webp"
 ---
@@ -26,8 +28,7 @@ const image_pullpass = dir_image + stored_imageName + extention;
         <h3 class="date">{page_updated}</h3>
       </dev>
       <Image
-        src={image_pullpass}
-        width={1500} height={1500}
+        src={myImage}
         alt={group_name} 
         
       />
