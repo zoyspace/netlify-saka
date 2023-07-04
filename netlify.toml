@@ -4,3 +4,7 @@
   included_files = ["package.json"]
   external_node_modules = ["@playwright/test", "playwright-core","astro"]
 
+[build]
+  command = "npm run build"
+  publish = "dist"
+
