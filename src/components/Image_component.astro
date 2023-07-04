@@ -1,6 +1,6 @@
 ---
 // import { Image } from '@astrojs/image/components';
-import { Image } from 'astro:assets';
+import { Image,getImage } from 'astro:assets';
 
 
 export interface Props {
@@ -13,10 +13,11 @@ export interface Props {
 
 const { name, page_title, page_url, page_updated,stored_imageName} = Astro.props;
 const group_name ="乃木坂４６";
-const dir_image= "src/assets/images/";
+const dir_image= ".../assets/images/";
 const extention = ".webp"
 const image_pullpass = dir_image + stored_imageName + extention;
 import myImage from "../assets/images/202306202108_北川悠理_00.webp"; // Image is 1600x900
+// import myImage1getImage( image_pullpass); // Image is 1600x900
 
 // import image_connect_pass from image_pullpass;
 // const testpass = "../assets/202306272110_北川悠理_00.webp"
@@ -28,7 +29,7 @@ import myImage from "../assets/images/202306202108_北川悠理_00.webp"; // Ima
         <h3 class="date">{page_updated}</h3>
       </dev>
       <Image
-        src={myImage}
+        src={image_pullpass}
         alt={group_name} 
         
       />
