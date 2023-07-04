@@ -1,0 +1,2 @@
+[functions]
+external_node_modules = ["@playwright/test", "playwright-core"]
