@@ -1,10 +1,10 @@
 import type { Handler, HandlerEvent, HandlerContext } from "@netlify/functions";
-import { schedule } from "@netlify/functions";
+// import { schedule } from "@netlify/functions";
 
 import { main } from "./main";
 
 // async function handler(event: HandlerEvent, context: HandlerContext) {
-const handler: Handler = async (
+export const handler: Handler = async (
 	event: HandlerEvent,
 	context: HandlerContext
 ) => {
@@ -14,7 +14,5 @@ const handler: Handler = async (
 		// body: JSON.stringify({ message: "Hello this is netlify functions" }),
 	};
 };
-
-exports.handler = schedule("25 18 * * *", handler);
 
 // export { handler };
