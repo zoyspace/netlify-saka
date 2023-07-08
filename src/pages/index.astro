@@ -2,7 +2,7 @@
 import Layout from '../layouts/Layout.astro';
 import Image_component from '../components/Image_component.astro';
 import {readFile} from '../lib/readFile';
-const image_list:[] = await readFile("./src/assets/out_imageList.json");
+const image_list:[] = await readFile("./public/out_imageList.json");
 
 const plus_image_list:any[]  =[];
 image_list.forEach((element:any) => {

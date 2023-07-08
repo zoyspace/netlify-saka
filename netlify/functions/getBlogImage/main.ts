@@ -8,7 +8,7 @@ import { exit } from "process";
 // const target_url = "https://www.nogizaka46.com/s/n46/diary/MEMBER?ima=1031";
 const target_url = "https://www.nogizaka46.com/s/n46/diary/MEMBER";
 const out_image_file = "out_imageList.json";
-const assets_dir = "src/assets/";
+const public_dir = "public/";
 const image_dir = "public/images/";
 export interface blog_element {
 	date: string;
@@ -22,7 +22,7 @@ const result: string[] = [];
 
 export async function main() {
 	const html = await fetchHtmlWithBrowser(target_url);
-	writeFile(assets_dir + "out_content.html", html.toString(), (err) => {
+	writeFile(public_dir + "out_content.html", html.toString(), (err) => {
 		if (err) throw err;
 		const re_message = "html正常に書き込みが完了しました";
 		console.log(re_message);
@@ -30,9 +30,9 @@ export async function main() {
 	});
 
 	const blogArray = parseHome(html);
-	if (existsSync(assets_dir + out_image_file)) {
+	if (existsSync(public_dir + out_image_file)) {
 		const rawData = await promises.readFile(
-			assets_dir + out_image_file,
+			public_dir + out_image_file,
 			"utf8"
 		);
 		const pre_imageList = JSON.parse(rawData);
@@ -59,7 +59,7 @@ export async function main() {
 	result.push("complete fetchPage");
 
 	const out_json2 = JSON.stringify(blogArray2, null, 2);
-	writeFile(assets_dir + out_image_file, out_json2, (err) => {
+	writeFile(public_dir + out_image_file, out_json2, (err) => {
 		if (err) throw err;
 		console.log(out_image_file + " has been written successfully");
 	});
