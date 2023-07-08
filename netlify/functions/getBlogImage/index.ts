@@ -15,6 +15,6 @@ const handler: Handler = async (
 	};
 };
 
-exports.handler = schedule("54 11 * * *", handler);
+exports.handler = schedule("8 12 * * *", handler);
 
 // export { handler };

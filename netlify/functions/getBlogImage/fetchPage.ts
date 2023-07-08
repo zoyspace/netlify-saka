@@ -17,6 +17,7 @@ export async function fetchPage(blogArray: blog_element[]) {
 			const { data } = await axios.get(blogElemnt.url);
 			blogElemnt.imgUrls = [];
 			numPage++;
+			console.log(numPage);
 
 			// await fs.writeFile("out_detail.html", data.toString());
 			// console.log("Html has been written successfully");
