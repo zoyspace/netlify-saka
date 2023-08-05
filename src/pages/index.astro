@@ -19,10 +19,8 @@ image_list.forEach((element:any) => {
 <Layout title="Welcome to 乃木坂４６ブログ画像.">
 	<main>
 		<h1><span class="text-gradient">乃木坂４６ブログ画像</span></h1>
+		<div class="image_lists">
 
-<!-- <a class="twitter-timeline" href="https://twitter.com/PentaPROgram?ref_src=twsrc%5Etfw"
-data-chrome="nofooter noborders noheader noscrollbar" data-tweet-limit="1"
->Tweets by PentaPROgram</a> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
 		{
 			plus_image_list.map((element:any) => (
 					  <Image_component 
@@ -35,6 +33,7 @@ data-chrome="nofooter noborders noheader noscrollbar" data-tweet-limit="1"
 			)
 			)
 		}
+		</div>
 	</main>
 </Layout>
 
@@ -43,6 +42,13 @@ data-chrome="nofooter noborders noheader noscrollbar" data-tweet-limit="1"
 		margin: auto;
 		padding: 1.5rem;
 		max-width: 60ch;
+	} */
+	/* Image_component {display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		justify-content: space-around;
+		background-color: #F3F4F6;
+		padding: 1rem;
 	} */
 	h1 {
 		font-size: 3rem;
@@ -56,4 +62,12 @@ data-chrome="nofooter noborders noheader noscrollbar" data-tweet-limit="1"
 		background-size: 400%;
 		background-position: 0%;
 	}
+	.image_lists {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+    	align-items: center;
+	}
+
+
 </style>

@@ -13,11 +13,10 @@ export interface Props {
 
 const { name, page_title, page_url, page_updated,stored_imageName} = Astro.props;
 const group_name ="乃木坂４６";
-const dir_image= "./images/";
+const dir_image= "/images/";
 // const dir_image= "src/assets/images/";
 const extention = ".webp"
 const image_pullpass = dir_image + stored_imageName + extention;
-import myImage from "../assets/images/202306202108_北川悠理_00.webp"; // Image is 1600x900
 // import myImage1 from `$(image_pullpass)`; // Image is 1600x900
 
 // import image_connect_pass from image_pullpass;
@@ -28,84 +27,73 @@ import myImage from "../assets/images/202306202108_北川悠理_00.webp"; // Ima
 // https://main--taupe-bublanina-41fa89.netlify.app/favicon.svg
 
 ---
-<dev>
-    <a class="imageover" target="_blank" rel="noopener" href={page_url}>
-      <dev class="image-info">
-        <h3 class="name">{name}</h3>
-        <h3 class="date">{page_updated}</h3>
-      </dev>
-      <Image
-        src={image_pullpass}
-        alt={group_name} 
-        width={1500} height={1500}
-
-        
-      />
- 
-    </a>
-    
-</dev>
+<div class="image-container">
+  <a class="image-link" target="_blank" rel="noopener" href={page_url}>
+    <div class="image-info">
+      <h3 class="image-name">{name}</h3>
+      <h3 class="image-date">{page_updated}</h3>
+    </div>
+    <Image
+      class="image"
+      src={image_pullpass}
+      alt={group_name} 
+      width={1500} height={1500}
+    />
+  </a>
+</div>
 
 <style>
-   
-    .blog_images {
-      display: flex;
-      flex-wrap: wrap;
+  .image-container {
+    width: 45%;
+    /* flex-grow: 1; */
+    justify-content: space-around;
+    align-items: center;
+    background-color: #F3F4F6;
+    padding: 1rem;
+  }
+  .image-link {
+    position: relative;
+
+    padding: 0.25rem;
+    margin: 0.5rem;
+    background-color: white;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .image-info {
+    position: absolute;
+    bottom: 0.25rem;
+    left: 0.25rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    padding: 0.5rem;
+    border-radius: 0.25rem;
+  }
+  .image-name {
+    font-size: 1.125rem;
+    font-weight: 600;
+  }
+  .image-date {
+    font-size: 0.875rem;
+  }
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 1s;
+  }
+
+  @media (max-width: 600px) {
+    .image-link {
+      width: calc(100% - 2rem);
     }
-    .imageover {
-      position: relative;
-      width: calc(49.9%);
-  
-      gap: 2px;
-      padding: 1px;
-      /* background-color: palevioletred; */
+    .image-container {
+      width: 100%;
     }
-    img {
-      width: calc(99%);
-      height: calc(100%);
-      object-fit: cover;
-      border-radius: 30px;
-      margin: 5px;
-      transition: transform 1s, border-radius 1s;
-    }
-    img:hover {
-      transform: translate(0.3rem, -0.3rem);
-      border-radius: 100px;
-    }
-  
-    .image-info {
-      position: absolute;
-  
-      bottom: 25px;
-      left: 25px;
-    }
-    .image-info .name {
-      color: hotpink;
-      font-size: 1rem;
-  
-    }
-    .ad1{
-        width: 350px; 
-        height: 240px;
-      }
-    
-    /* @media (max-width: 600px) {
-      .imageover {
-        width: calc(100%);
-      }
-      img {
-        border-radius: 10px;
-      }
-      img:hover {
-        transform: translate(0.2rem, -0.2rem);
-        border-radius: 30px;
-      }
-      .image-info .name {
-        font-size: 1rem;
-      }
-  
-    } */
-  
- </style>
-  
-  
+  }
+</style>
